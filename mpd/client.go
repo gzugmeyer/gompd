@@ -343,6 +343,14 @@ func (c *Client) Consume(consume bool) error {
 	return c.okCmd("consume 0")
 }
 
+// Crossfade enables crossfade mode, if crossfade is true, disables it otherwise.
+func (c *Client) Crossfade(crossfade bool) error {
+	if crossfade {
+		return c.okCmd("crossfade 1")
+	}
+	return c.okCmd("crossfade 0")
+}
+
 //
 // Playlist related functions
 //
